@@ -1,0 +1,10 @@
+/* Rose — matches waybar rose.css */
+* {
+    bg0:     #191724;  /* wincolor: deep charcoal-black base */
+    bg1:     transparent;  /* bg-1: charcoal panel */
+    bg2:     #ff829659;  /* bghover: coral pink glow, selected item */
+    fg0:     #fffaf5;  /* text: warm off-white */
+    fg1:     #c8c8cd;  /* batteryplugged: chrome/silver, muted text */
+    accent:  rgb(235, 188, 186);  /* batterycharging: bright coral-pink */
+    urgent:  #e63c5a;  /* deeper coral-red, for urgent/alert items */
+}

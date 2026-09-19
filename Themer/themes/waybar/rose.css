@@ -1,0 +1,15 @@
+@define-color charging rgb(86, 148, 159); /* Foam */
+@define-color plugged #31748f;  /* Pine */
+
+@define-color border   rgb(235, 188, 186);  /* Rose */
+
+@define-color bg    transparent;    /* No-Color */
+@define-color bg2  rgb(235, 188, 186); /* Rose*/
+
+@define-color text     rgb(224, 222, 244);  /* Text */
+@define-color text2    rgb(25, 23, 36);     /* Base */
+
+@define-color urgent rgb(235, 111, 146); /* Love */
+@define-color empty rgb(144, 140, 170); /* Subtle*/
+
+@define-color wincolor rgba(25, 23, 36, 0.99); /* Base */

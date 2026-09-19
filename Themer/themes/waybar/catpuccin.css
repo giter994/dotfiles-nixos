@@ -1,0 +1,16 @@
+/* Catpuccin */
+@define-color charging rgb(166, 227, 161); /* Green-Mocha */
+@define-color plugged rgb(137, 180, 250); /* Blue-Mocha */
+
+@define-color border   #cba6f7; /* Lavander-Frappe */
+
+@define-color bg     transparent; /* No-Color */
+@define-color bg2  #cba6f7; /* Lavander-Frappe */
+
+@define-color text    rgb(205, 214, 244); /* Text-Mocha */
+@define-color text2    rgb(30, 30, 46); /* Crust-Mocha */
+
+@define-color urgent rgb(210, 15, 57); /* Red-Latte */
+@define-color empty rgb(108, 111, 133); /* Subtext 0 */
+
+@define-color wincolor rgba(17, 17, 27, 0.99); /* Crust-Mocha */

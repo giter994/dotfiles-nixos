@@ -1,0 +1,10 @@
+/* Catppuccin Mocha */
+* {
+    bg0:     #1e1e2e;
+    bg1:     #313244;
+    bg2:     #45475a;
+    fg0:     #cdd6f4;
+    fg1:     #a6adc8;
+    accent:  #cba6f7;
+    urgent:  #f38ba8;
+}
