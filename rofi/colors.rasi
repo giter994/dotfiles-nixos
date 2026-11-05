@@ -1,0 +1,10 @@
+/* Soft Black & White — Transparent */
+* {
+    bg0:     rgba(15, 15, 15, 0.7);
+    bg1:     #1c1c1ccc;
+    bg2:     #292929cc;
+    fg0:     #ffffff;
+    fg1:     #cccccc;
+    accent:  #ffffff;
+    urgent:  #999999;
+}
