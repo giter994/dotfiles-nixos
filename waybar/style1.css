@@ -1,0 +1,169 @@
+@import "colors.css";
+* {
+  border: none;
+  background-color: transparent;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+window#waybar {
+  background: @wincolor;
+  border-radius: 20px;
+  color: @text;
+}
+
+tooltip {
+  background: @wincolor;
+  border-radius: 15px;
+}
+
+tooltip label {
+  color: @text;
+}
+
+#memory {
+  padding: 0px 12px 0px 12px;
+  margin: 4px 0px;
+  background-color: transparent;
+}
+
+#cpu {  
+  padding: 0px 12px 0px 12px;
+  margin: 4px 4px;
+  background-color: transparent;
+}
+
+#temperature {
+  padding: 0px 12px 0px 12px;
+  margin: 4px 0px;
+  background-color: transparent;
+}
+
+#temperature.critical-threshold {
+  color: @urgent
+}
+
+#workspaces {
+  background-color: transparent;
+  padding: 0px 6px 0px 6px;
+  margin: 0px 0px;
+}
+
+#workspaces button {
+  min-width: 16px;
+  border-radius: 20px;
+  padding: 0px 2px 0px 2px;
+  margin: 6px 2px 6px 2px;
+  color: @text;
+  transition: all 150ms ease-in-out;
+}
+
+#workspaces button.active {
+  color: @text2;
+  background-color: @border;
+  transition: all 150ms ease-in-out;
+}
+
+#workspaces button.urgent {
+  color: @text2;
+  background-color: @urgent;
+  transition: background-color 250ms ease-in-out;
+}
+
+#battery {
+  color: @text;
+}
+
+#battery.charging {
+  color: @charging;
+}
+
+#battery.plugged {
+  color: @plugged;
+}
+
+#battery.warning {
+  color: @urgent;
+}
+
+#battery.critical {
+  color: @urgent;
+}
+
+#tray {
+  padding: 0px 14px 0px 12px;
+  margin: 0px 5px; 
+}
+
+#power-profiles-daemon {
+  color: @text;
+  margin: 4px 7px 4px 0px;
+  padding: 0px 13px 0px 8px;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @text;
+}
+
+#power-profiles-daemon.balanced {
+  color: @text;
+}
+
+#power-profiles-daemon.performance {
+  color: @text;
+}
+
+#pulseaudio-slider {
+  padding: 0px 14px 0px 12px;
+  margin: 5px 0px; 
+  background-color: rgba(100, 114, 125, 0.3);
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 75px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+}
+
+#pulseaudio-slider.muted highlight {
+  background-color: orange;
+}
+
+#network, #bluetooth, #pulseaudio, #pulseaudio-slider, #battery {
+  padding: 4px 16px 4px 12px;
+  margin: 4px 4px; 
+}
+
+#clock {
+  padding: 4px 12px 4px 12px;
+  margin: 4px 4px; 
+}
+
+#network {
+  padding: 4px 18px 4px 12px;
+  margin: 4px 4px; 
+}
+
+/*#temperature:hover ,#network:hover, #bluetooth:hover, #pulseaudio:hover, #clock:hover, #battery:hover, #cpu:hover, #memory:hover, #power-profiles-daemon:hover {
+  background-color: white;
+  color: black;
+  transition: all 150ms ease-in-out;
+}*/
+

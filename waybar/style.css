@@ -1,0 +1,173 @@
+@define-color charging rgb(166, 227, 161); /* Green-Mocha */
+@define-color plugged rgb(137, 180, 250); /* Blue-Mocha */
+
+@define-color border   rgb(255, 255, 255); 
+
+@define-color bg     transparent; /* No-Color */
+@define-color bg2  rgba(255, 255, 255, 0.8); /* Light-Gray */
+
+@define-color text    rgb(255, 255, 255); /* Text-Mocha */
+@define-color text2    rgb(30, 30, 46); /* Crust-Mocha */
+
+@define-color urgent rgb(210, 15, 57); /* Red-Latte */
+@define-color empty rgb(108, 111, 133); /* Subtext 0 */
+
+@define-color wincolor rgba(15, 15, 15, 1.0); /* Crust-Mocha */
+
+*{
+  border: none;
+  background-color: transparent;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+window#waybar {
+  background: @wincolor;
+  border-radius: 0px;
+  color: @text;
+}
+
+tooltip {
+  background: @wincolor;
+  border-radius: 0px;
+}
+
+tooltip label {
+  color: @text;
+}
+
+#memory {
+  padding: 0px 12px 0px 12px;
+  margin: 4px 0px;
+  background-color: transparent;
+}
+
+#cpu {  
+  padding: 0px 12px 0px 12px;
+  margin: 4px 4px;
+  background-color: transparent;
+}
+
+#temperature {
+  padding: 0px 12px 0px 12px;
+  margin: 4px 0px;
+  background-color: transparent;
+}
+
+#temperature.critical-threshold {
+  color: @urgent
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  border-radius: 0px;
+  margin: 0px 0px;
+
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @text2;
+  background-color: @border;
+}
+
+#workspaces button.urgent {
+  color: @text2;
+  background-color: @urgent;
+}
+
+#battery {
+  color: @text;
+}
+
+#battery.charging {
+  color: @charging;
+}
+
+#battery.plugged {
+  color: @plugged;
+}
+
+#battery.warning {
+  color: @urgent;
+}
+
+#battery.critical {
+  color: @urgent;
+}
+
+#tray {
+  padding: 0px 14px 0px 12px;
+  margin: 0px 5px; 
+}
+
+#power-profiles-daemon {
+  color: @text;
+  margin: 0px 10px 0px 0px;
+  padding: 0px 12px;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @text;
+}
+
+#power-profiles-daemon.balanced {
+  color: @text;
+}
+
+#power-profiles-daemon.performance {
+  color: @text;
+}
+
+#pulseaudio-slider {
+  padding: 0px 14px 0px 12px;
+  margin: 0px 0px; 
+  background-color: rgba(100, 114, 125, 0.3);
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 75px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+}
+
+#pulseaudio-slider.muted highlight {
+  background-color: orange;
+}
+
+#network, #bluetooth, #pulseaudio, #pulseaudio-slider, #battery {
+  padding: 0px 8px;
+  margin: 0px 12px; 
+}
+
+#clock {
+  padding: 0px 14px;
+}
+
+/*#temperature:hover ,#network:hover, #bluetooth:hover, #pulseaudio:hover, #clock:hover, #battery:hover, #cpu:hover, #memory:hover, #power-profiles-daemon:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+  transition: all 150ms ease-in-out;
+}*/
+
