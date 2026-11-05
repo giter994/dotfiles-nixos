@@ -1,0 +1,365 @@
+spawn-at-startup "waybar"
+spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/tokyo.png"
+
+prefer-no-csd
+
+output "eDP-1" {
+    // off
+    mode "1920x1080@120.030"
+    scale 1.0
+    // transform "90" // rotates screen to set degrees
+    position x=1280 y=0
+    variable-refresh-rate // on-demand=true
+    focus-at-startup
+    backdrop-color "#001100"
+    // max-bpc 8
+
+    hot-corners {
+        // off
+        top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+
+    layout {
+        // ...layout settings for eDP-1...
+    }
+
+    // Custom modes. Caution: may damage your display.
+    // mode custom=true "1920x1080@100"
+    // modeline 173.00  1920 2048 2248 2576  1080 1083 1088 1120 "-hsync" "+vsync"
+}
+
+output "HDMI-A-1" {
+    // ...settings for HDMI-A-1...
+}
+
+input {
+    mod-key "Super"
+    mod-key-nested "Alt"
+    workspace-auto-back-and-forth
+    focus-follows-mouse
+
+    keyboard {
+        xkb {
+            // layout "us"
+            //variant "colemak_dh_ortho"
+            // options "compose:ralt,ctrl:nocaps"
+            // model ""
+            // rules ""
+            // file "~/.config/keymap.xkb"
+        }
+
+        // repeat-delay 600
+        // repeat-rate 25
+        track-layout "global"
+        // numlock
+    }
+
+    touchpad {
+        // off
+        tap
+        // dwt
+        // dwtp
+        // drag false
+        // drag-lock
+        // natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        // pinch-sensitivity 1.0
+        //scroll-factor 1.0
+        //scroll-factor vertical=1.0 horizontal=-2.0
+        scroll-method "two-finger"
+        scroll-button 273
+        scroll-button-lock
+        tap-button-map "left-middle-right"
+        click-method "clickfinger"
+        // left-handed
+        // disabled-on-external-mouse
+        middle-emulation
+    }
+
+    mouse {
+        // off
+        natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
+        // scroll-method "no-scroll"
+        //scroll-button 273
+       // scroll-button-lock
+        // left-handed
+        //middle-emulation
+    }
+
+    trackpoint {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+        // left-handed
+        // middle-emulation
+    }
+
+    trackball {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+        // left-handed
+        // middle-emulation
+    }
+
+    tablet {
+        // off
+        map-to-output "eDP-1"
+        // map-to-focused-output
+        // map-to-focused-window
+        // left-handed
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
+    }
+
+    touch {
+        // off
+        map-to-output "eDP-1"
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
+    }
+}
+
+
+
+binds {
+
+    Mod+Z { toggle-overview; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+
+    Alt+WheelScrollDown { focus-column-right; }
+    Alt+WheelScrollUp { focus-column-left; }
+
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+H { focus-column-left; }
+    Mod+L { focus-column-right; }
+
+    // Switch to workspaces 1–9
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+// Move the focused window to workspaces 1–9
+    Mod+Ctrl+1 { move-window-to-workspace 1; }
+    Mod+Ctrl+2 { move-window-to-workspace 2; }
+    Mod+Ctrl+3 { move-window-to-workspace 3; }
+    Mod+Ctrl+4 { move-window-to-workspace 4; }
+    Mod+Ctrl+5 { move-window-to-workspace 5; }
+    Mod+Ctrl+6 { move-window-to-workspace 6; }
+    Mod+Ctrl+7 { move-window-to-workspace 7; }
+    Mod+Ctrl+8 { move-window-to-workspace 8; }
+    Mod+Ctrl+9 { move-window-to-workspace 9; }
+
+
+    Mod+D { spawn "fuzzel"; }
+    Mod+Q { spawn "kitty"; }
+    Mod+E { spawn "thunar"; }
+    Mod+X { close-window; }
+
+    Mod+Escape { quit; }
+
+    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+}
+
+
+
+
+layout {
+    gaps 12
+    center-focused-column "never"
+    always-center-single-column
+    empty-workspace-above-first
+    default-column-display "tabbed"
+    background-color "transparent"
+    // fullscreen-backdrop-color "#000000ff"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    focus-ring {
+        // off
+        on
+        width 2.3
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+
+    border {
+        off
+        // on
+        width 4
+        active-color "#ffc87f"
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view" in="srgb-linear"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+
+    shadow {
+        // on
+        off
+        softness 30
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "#00000070"
+        // inactive-color "#00000054"
+    }
+
+    tab-indicator {
+        // off
+        on
+        hide-when-single-tab
+        place-within-column
+        gap 5
+        width 4
+        length total-proportion=1.0
+        position "right"
+        gaps-between-tabs 2
+        corner-radius 8
+        active-color "red"
+        inactive-color "gray"
+        urgent-color "blue"
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+
+    insert-hint {
+        // off
+        on
+        color "#ffc87f80"
+        // gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
+    }
+
+    struts {
+         left 2
+         right 2
+         top 8
+         bottom 2
+    }
+}
+
+animations {
+    // Uncomment to turn off all animations.
+    // You can also put "off" into each individual animation to disable it.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+     slowdown 1.1
+
+    // Individual animations.
+
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+
+    window-open {
+        duration-ms 150
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
+
+    exit-confirmation-open-close {
+        spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+    }
+
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+
+    overview-open-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    recent-windows-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.001
+    }
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// Make workspaces four times smaller than normal in the overview.
+overview {
+    zoom 0.45
+}
+
+
+window-rule {
+    match title="Thunar"
+    open-maximized false
+    open-maximized-to-edges false
+    open-fullscreen false
+}
+
+window-rule {
+    match title="org.vinegarhq.Sober"
+    open-maximized true
+    open-maximized-to-edges false
+    open-fullscreen false
+}
