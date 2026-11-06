@@ -9,9 +9,6 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-local colors = require("colors")
-local borders = require("borders")
-
 ------------------
 ---- MONITORS ----
 ------------------
